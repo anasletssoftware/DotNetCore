@@ -1,0 +1,87 @@
+﻿@model ImadErp.Model.Employee
+
+@{
+    ViewData["Title"] = "delete";
+}
+
+<h2>delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone_Number)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hire_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hire_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobId)
+        </dd>
+    </dl>
+    
+    <form asp-action="delete">
+        <input type="hidden" asp-for="EmployeeId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

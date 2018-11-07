@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ImadErp.Model.JobHistory>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hire_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.End_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDeleted)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hire_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departments.DepartmentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employees.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jobs.JobId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JobHistoryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JobHistoryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobHistoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
